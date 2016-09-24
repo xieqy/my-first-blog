@@ -3,10 +3,22 @@
         <title>Qingyang's blog</title>
     </head>
     <body>
-        <h1><strong><div>Qingyang's Blog</div></strong></h1>
-        <h3><em>Welcome</em></h3>
-            <p>Hi there!</p>
-            <p>It works!<br />I'm so happy to have you here!</p>
-            <p>Check out the awesome vegan recipes on <a href="www.thevegancorner.com">the Vegan Corner</a></p>
+        <div>
+            <h1><a href="">Qingyang's Blog</a></h1>
+        </div>
+
+        <div>
+          {% for post in posts %}
+              <div>
+                  <p>published: {{ post.published_date }}</p>
+                  <h1><a href="">{{ post.title }}</a></h1>
+                  <p>{{ post.text|linebreaksbr }}</p>
+              </div>
+          {% endfor %}
+        </div>
+
+        <div>
+            <p>Check out the awesome vegan recipes on <a href="http://www.thevegancorner.com">the Vegan Corner</a></p>
+        </div>
     </body>
 </html>
